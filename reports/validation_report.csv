@@ -1,0 +1,19 @@
+rule,table,column,failed,total,status
+Duplicate check,src_customers,customer_id,10,510,FAIL
+Null check,src_customers,email,15,510,FAIL
+Null check,src_customers,name,5,510,FAIL
+Email format check,src_customers,email,12,510,FAIL
+Data type check,src_customers,age,8,510,FAIL
+Range check,src_customers,age,7,510,FAIL
+Duplicate check,src_orders,order_id,5,1505,FAIL
+Null check,src_orders,order_date,10,1505,FAIL
+Range check,src_orders,amount,10,1505,FAIL
+Referential integrity,src_orders,customer_id,20,1505,FAIL
+Row count match,customers,(all rows),25,510,FAIL
+Row count match,orders,(all rows),15,1505,FAIL
+Source-to-target key match,customers,customer_id,15,500,FAIL
+Source-to-target key match,orders,order_id,10,1500,FAIL
+Duplicate check,tgt_customers,customer_id,0,485,PASS
+Null check,tgt_customers,email,0,485,PASS
+Duplicate check,tgt_orders,order_id,0,1490,PASS
+Null check,tgt_orders,order_date,0,1490,PASS
