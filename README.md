@@ -78,6 +78,20 @@ Running `python -m dq_tool.run_validation` scans **3,807 records** (source + tar
 
 All 14 automated tests (13 unit tests and 1 end-to-end test) pass.
 
+## Screenshots
+
+**Validation run** – 18 rules on 3,807 records, 10 failed on purpose (injected defects), 8 passed:
+
+![Validation run output](screenshots/validation-run.png)
+
+**Automated tests** – all 14 tests pass:
+
+![Pytest results](screenshots/pytest-results.png)
+
+**Generated report** – `reports/validation_report.md` showing failed checks by table and rule:
+
+![Validation report](screenshots/validation-report.png)
+
 ## Run it
 
 ```bash
@@ -102,6 +116,7 @@ tests/
   test_pipeline.py    end-to-end test: counts, reconciliation, quarantine reasons
 data/warehouse.db     generated SQLite database (src_, tgt_, quarantine_ tables)
 reports/              generated validation_report.csv and .md
+screenshots/          images used in this README
 STUDY_GUIDE.md        glossary, code walkthrough, interview Q&A
 ```
 
